@@ -11,7 +11,9 @@ audioFiles = sorted(glob.glob(audioPath+"/*mp3_*.wav"))
 musicFiles = sorted(glob.glob(musicPath+"/*.wav"))
 randomMax=3
 randomLoopsMax=3
-lowPassFilterFreqHz=3000
+bandfilterRange=3000
+lowPassFilterFreqHz=bandfilterRange-1000
+highPassFilterFreqHz=bandfilterRange+1000
 
 pygame.mixer.init()
 pygame.init()
@@ -20,7 +22,7 @@ pygame.mixer.set_num_channels(len(audioFiles) +1)
 mixerList=[]
 for audioFile in audioFiles:
     print("Loading: " + audioFile)
-    sound=pygame.mixer.Sound(AudioSegment.from_wav(audioFile).low_pass_filter(lowPassFilterFreqHz).raw_data)
+    sound=pygame.mixer.Sound(AudioSegment.from_wav(audioFile).low_pass_filter(lowPassFilterFreqHz).high_pass_filter(highPassFilterFreqHz).raw_data)
     sound.set_volume(audioVol)
     mixerList.append(sound)
 
