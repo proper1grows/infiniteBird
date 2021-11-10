@@ -1,3 +1,4 @@
+
 # infiniteBird
 a python script that will randomly play bird sounds filtered at 3kHz infinitely.
 samples were sourced from https://experiments.withgoogle.com/bird-sounds
@@ -17,10 +18,12 @@ rasp pi 4 should be like:
 
     `raspi-config` -> `Advanced Options` -> `A4 Audio Force audio out through HDMI or 3.5mm jack`. Select `1 Headphones`. 
  then run:
- `cd /usr/local/
-git clone https://github.com/proper1grows/infiniteBird.git
-cd infiniteBird
-pip3 install -r requirements.txt
-python3 infiniteBird.py 
-`
+`cd /usr/local/`
+`git clone https://github.com/proper1grows/infiniteBird.git`
+`cd infiniteBird`
+`pip3 install -r requirements.txt`
+`python3 infiniteBird.py `
 control + c to kill the noise.
+[Video of the software in action on a rasp pi b](https://imgur.com/a/fn6BB2R)
+
+
